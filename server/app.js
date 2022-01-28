@@ -11,16 +11,25 @@ app.get("/", (req, res) => {
 });
 
 app.post("/login", async (req, res) => {
-  // connecter à notre ad
-  let user = await authenticate({
-    ldapOpts: { url: "ldap://ldap.forumsys.com" },
-    userDn: "uid=gauss,dc=example,dc=com",
-    userPassword: "password",
-    userSearchBase: "dc=example,dc=com",
-    usernameAttribute: "uid",
-    username: "gauss",
-  });
-  console.log(user);
+  let user = null;
+  try {
+    // connecter à notre ad
+    user = await authenticate({
+      ldapopts: { url: "ldap://192.168.0.150" },
+      // adminDn: "cn=read-only-admin,dc=clin,dc=local",
+      // adminPassword: "Vqatqbpp1954",
+      userDn: "cn=paul,ou=ldap,dc=clin,dc=local",
+      userPassword: "Azerty1234",
+      userSearchBase: "dc=clin,dc=local",
+      usernameAttribute: "cn",
+      username: "paul",
+    });
+  } catch (error) {
+    console.log(error);
+  }
+
+  console.Log(user);
+
   if (!user)
     return res.status(401).json({
       error:
@@ -28,7 +37,7 @@ app.post("/login", async (req, res) => {
       user: null,
     });
 
-  res.json({ user: true });
+  res.json({ user: user });
 });
 
 app.use((req, res) => {
