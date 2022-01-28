@@ -37,7 +37,7 @@ app.post("/login", async (req, res) => {
       user: null,
     });
 
-  res.json({ user: user });
+  res.json({ user });
 });
 
 app.use((req, res) => {
