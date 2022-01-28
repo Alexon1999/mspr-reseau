@@ -7,7 +7,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.get("/", (req, res) => {
-  res.sendFile("./public/index.html");
+  res.sendFile("index.html");
 });
 
 app.post("/login", async (req, res) => {
