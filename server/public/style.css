@@ -318,3 +318,85 @@ body.menu-active .menu {
 body.menu-active .menu::before {
   background: rgba(240, 240, 240, 0.9);
 }
+
+.inactive {
+  display: none;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.alerts {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.alert {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  min-height: 150px;
+  text-align: center;
+  background-color: rgb(247, 245, 245);
+  color: rgb(31, 31, 31);
+}
+
+.alert h1 {
+  border-bottom: 1px solid rgb(167, 167, 167);
+  font-size: 1.2rem;
+  opacity: 0.8;
+  margin: 0;
+  padding: 10px;
+}
+
+.alert h1 marquee {
+  width: 35%;
+}
+
+.alert p {
+  opacity: 0.7;
+}
+
+.alert a {
+  display: inline-block;
+  padding: 5px 10px;
+  background-color: rgb(97, 150, 250);
+  border-radius: 5px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.alert .recommandation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.alert .recommandation span {
+  margin: 0 8px;
+}
+
+.alert__container {
+  position: relative;
+}
+
+.alert .close {
+  position: absolute;
+  top: -10px;
+  left: -3px;
+  cursor: pointer;
+}
+
+.alert .close i {
+  color: rgb(250, 112, 112);
+}
+
+.error {
+  margin-bottom: 15px;
+  color: rgb(247, 134, 134);
+}
+
+.home {
+  margin-top: 70px;
+}

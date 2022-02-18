@@ -1,3 +1,19 @@
+async function getUserById(db, id) {
+  return new Promise((resolve, reject) => {
+    let sql = `SELECT *
+           FROM user
+           WHERE id = ?`;
+
+    db.get(sql, [id], (err, row) => {
+      if (err) {
+        console.error(err.message);
+        resolve(null);
+      }
+      resolve(row);
+    });
+  });
+}
+
 async function getUserByName(db, name) {
   return new Promise((resolve, reject) => {
     let sql = `SELECT *
@@ -26,6 +42,7 @@ async function saveUser(db, data) {
 }
 
 module.exports = {
+  getUserById,
   getUserByName,
   saveUser,
 };
