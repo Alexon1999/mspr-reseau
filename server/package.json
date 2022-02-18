@@ -4,6 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
+    "dev": "nodemon app.js",
     "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,6 +12,11 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.2",
-    "ldap-authentication": "^2.2.9"
+    "ldap-authentication": "^2.2.9",
+    "node-2fa": "^2.0.3",
+    "sqlite3": "^5.0.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
   }
 }
