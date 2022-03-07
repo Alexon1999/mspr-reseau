@@ -29,12 +29,11 @@ app.post("/login", async (req, res) => {
 
   try {
     // connecter à notre ad
-
     user = await authenticate({
-      ldapopts: { url: "ldap://192.168.0.150" },
+      ldapOpts: { url: "ldap://192.168.0.150" },
       // adminDn: "cn=read-only-admin,dc=clin,dc=local",
       // adminPassword: "Vqatqbpp1954",
-      userDn: $`cn=${userData.name},ou=ldap,dc=clin,dc=local`,
+      userDn: `cn=${userData.name},ou=ldap,dc=clin,dc=local`,
       userPassword: userData.password,
       userSearchBase: "dc=clin,dc=local",
       usernameAttribute: "cn",
