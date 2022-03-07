@@ -8,4 +8,5 @@
 ## Tester avec curl
 ```
   curl -X POST http://localhost:3000/login
+  curl -d '{"name": "paul", "password": "Azerty123"}' -H 'Content-Type: application/json' -X POST http://localhost:3000/login
 ```
